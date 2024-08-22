@@ -1,0 +1,54 @@
+---
+import Share from "./Share.astro";
+import Header from "./Header.astro";
+import LinkBlock from "./LinkBlock.astro";
+import Footer from "./Footer.astro";
+import SpotifyBlock from "./SpotifyBlock.astro";
+
+const { name, description, userImage, color, logo } = Astro.props;
+---
+
+<div class="card divflex">
+  <div class="container divflex">
+    <Header
+      name={name}
+      description={description}
+      userImage={userImage}
+      socialColor={color}
+    />
+    <LinkBlock />
+    <Footer logo={logo} />
+  </div>
+</div>
+
+<style>
+  .divflex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    max-width: 720px;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    border-radius: 24px;
+    background-color: var(--main-bg-color);
+    margin: 72px 0;
+  }
+  .container {
+    max-width: 600px;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 64px;
+  }
+
+  /**Media Queries */
+  @media only screen and (max-width: 420px) {
+    .card {
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+</style>

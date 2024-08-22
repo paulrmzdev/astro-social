@@ -1,0 +1,55 @@
+---
+import SocialMediaButton from "./SocialMediaButton.astro";
+const { name, description, socialColor } = Astro.props;
+---
+
+<div class="usernameContainer">
+  <h1>{name}</h1>
+  <h2>{description}</h2>
+  <div class="socialMedia">
+    <SocialMediaButton
+      name="Github"
+      target="https://github.com/paulrmzdev"
+      icon=`https://img.icons8.com/ios-filled/50/${socialColor}/github.png`
+    />
+    <SocialMediaButton
+      name="LinkedIn"
+      target="https://www.linkedin.com/in/paulrmz/"
+      icon=`https://img.icons8.com/ios-filled/50/${socialColor}/linkedin.png`
+    />
+    <SocialMediaButton
+      name="Spotify"
+      target="https://open.spotify.com/playlist/6luQ67i1QhTIWSicxkr1f3?si=df77b7c716b3494a"
+      icon=`https://img.icons8.com/ios-filled/50/${socialColor}/spotify.png`
+    />
+    <SocialMediaButton
+      name="Email"
+      target="mailto:hola@paulrmz.com"
+      icon=`https://img.icons8.com/ios-filled/50/${socialColor}/circled-envelope.png`
+    />
+  </div>
+</div>
+
+<style>
+  .usernameContainer {
+    color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  h1 {
+    margin: 0;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  .socialMedia {
+    display: flex;
+    width: 60%;
+    justify-content: space-evenly;
+  }
+</style>

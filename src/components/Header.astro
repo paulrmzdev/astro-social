@@ -1,0 +1,20 @@
+---
+import Avatar from "./Avatar.astro";
+import Bio from "./Bio.astro";
+const { name, description, userImage, socialColor } = Astro.props;
+---
+
+<div class="container">
+  <Avatar userImage={userImage} />
+  <Bio name={name} description={description} socialColor={socialColor} />
+</div>
+<style>
+  .container {
+    width: 420px;
+    height: 520px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+</style>

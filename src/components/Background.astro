@@ -1,0 +1,30 @@
+---
+const { userImage } = Astro.props;
+---
+
+<div class="background" style=`background-image: url("${userImage.src}");`>
+</div>
+<style>
+  .background {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(50px);
+    -webkit-filter: blur(50px);
+    transform: scale(1.3);
+    position: fixed;
+  }
+  /* @media only screen and (max-width: 420px) { */
+  @media only screen and (max-width: 500px) {
+    .background {
+      /* display: none; */
+      /* background-image: none;
+      filter: none;
+      -webkit-filter: none; */
+    }
+  }
+</style>

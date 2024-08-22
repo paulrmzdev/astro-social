@@ -1,0 +1,24 @@
+---
+const { target, name, size = 40, icon } = Astro.props;
+---
+
+<div class="socialbutton" title={name} style=`width:${size};height:${size};`>
+  <a href={target} target="_blank" rel="noopener noreferrer" title={name}
+    ><img
+      width={size - 15}
+      height={size - 15}
+      src={icon}
+      alt={name}
+      title={name}
+    /></a
+  >
+</div>
+
+<style>
+  .socialbutton {
+    display: flex;
+    justify-content: start;
+    align-items: "start";
+    margin-left: 0;
+  }
+</style>

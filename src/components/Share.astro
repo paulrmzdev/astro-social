@@ -1,0 +1,26 @@
+---
+import Sharebutton from "./Sharebutton.astro";
+---
+
+<div class="shareDiv">
+  <Sharebutton />
+</div>
+
+<style>
+  .shareDiv {
+    display: flex;
+    width: 90%;
+    height: 64px;
+    justify-content: end;
+    align-items: center;
+  }
+  /**Media Queries */
+  @media only screen and (max-width: 420px) {
+    .shareDiv {
+      /* position: fixed; */
+      position: absolute;
+      z-index: 1;
+      top: 0;
+    }
+  }
+</style>

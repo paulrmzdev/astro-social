@@ -1,0 +1,24 @@
+---
+import Link from "./Link.astro";
+//<Link link="https://calendar.app.google/f8GEAVAjcKzyGeRe6" name="Agendar Consulta" internal={false}  />
+//<Link link="https://paulrmz.com/pads" name="Gadgets Recomendados" internal={false} />
+---
+
+<div class="linksContainer divflex">
+  <Link
+    link="https://calendar.app.google/f8GEAVAjcKzyGeRe6"
+    name="Agendar Consulta"
+    internal={false}
+  />
+</div>
+
+<style>
+  .linksContainer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,31 @@
+---
+const { link, name, internal } = Astro.props;
+const ref = internal ? "" : "noopener noreferrer";
+const targe = internal ? "" : "_blank";
+---
+
+<a href={link} class="link" target={targe} title={name} rel={ref}>{name}</a>
+
+<style>
+  .link {
+    background-color: var(--primary-color);
+    color: rgb(24, 24, 24);
+    padding: 8px;
+    margin: 8px 0px;
+    border-radius: 36px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 1.4;
+    text-decoration: none;
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*white-space: pre-wrap;*/
+  }
+  .link:hover {
+    transform: scale(1.02);
+  }
+</style>

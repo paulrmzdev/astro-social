@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+const { userImage } = Astro.props;
+---
+
+<div class="container-avatar">
+  <img
+    class="avatar"
+    src={userImage.src}
+    alt="Avatar imagen"
+    width={420}
+    title="Avatar imagen"
+  />
+</div>
+
+<style>
+  .avatar {
+    border-radius: 16px;
+    height: 520px;
+    object-fit: cover;
+  }
+  .container-avatar::after {
+    content: "";
+    width: 420px;
+    height: 520px;
+    position: absolute;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0) 80%, var(--main-bg-color) 95%);
+  }
+
+  /**Media Queries */
+  @media only screen and (max-width: 420px) {
+    .avatar {
+      border-radius: 0;
+    }
+  }
+</style>

@@ -1,0 +1,131 @@
+---
+//importamos imagen de usuario
+import userImage from "../assets/PaulRmz.webp";
+const userImageOG = "https://paulrmz.com/PaulRmzOG-min.png";
+import logo from "../assets/Firma-min.png";
+/*Name */
+const name = "Paul Ramírez";
+//Bio Description
+const bioDescription = "@paulrmz";
+//Meta description
+const metaDescription = name + " - Web developer based in Mexíco";
+//Domain
+const domain = "https://paulrmz.com/";
+/**Personal Color Palette */
+/**
+ * backgroundColor= "rgb(7 7 7)"; #070707
+ * primaryColor= #fafafa;
+ * secondaryColor= "rgb(7 7 7)"; #070707
+ * tertiaryColor = "#14A1F0;";
+ 4d4d4d
+ */
+/**Asignar Estilog globales */
+const backgroundColor = "#070707";
+const primaryColor = "fafafa"; /*Sin signo de # */
+const secondaryColor = "#070707";
+const tertiaryColor = "#14A1F0;";
+const primaryColorH = "#" + primaryColor; /*Con signo de # */
+
+//
+import Background from "../components/Background.astro";
+import Card from "../components/Card.astro";
+---
+
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TZHXCQ4");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={metaDescription} />
+    <meta
+      name="keywords"
+      content="PaulRmz,developer,desarrollador,programador,consultor,consultant,tech,tecnología"
+    />
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content={domain} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={name} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content={userImageOG} />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="paulrmz.com" />
+    <meta property="twitter:url" content={domain} />
+    <meta name="twitter:title" content={name} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={userImageOG} />
+    <meta name="robots" content="noimageindex" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{metaDescription}</title>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TZHXCQ4"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <Background userImage={userImage} />
+    <Card
+      name={name}
+      description={bioDescription}
+      userImage={userImage}
+      color={primaryColor}
+      logo={logo}
+    />
+
+    <style
+      define:vars={{
+        backgroundColor,
+        primaryColorH,
+        secondaryColor,
+        tertiaryColor,
+      }}
+    >
+      body {
+        /** */
+        /**Color de fondo */
+        --main-bg-color: var(--backgroundColor);
+        /**Tipo de fuente */
+        /**Header */
+        /**Color de texto en header */
+        --primary-color: var(--primaryColorH);
+        /**Color de fondo de enlaces */
+        --secondary-color: var(--secondaryColor);
+        --tertiary-color: var(--tertiaryColor);
+        /**Color de texto en Bloque de enlaces */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+
+        /* Font famoly */
+        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+      }
+      /**Media Queries */
+      @media only screen and (max-width: 420px) {
+        body {
+          background-color: var(--backgroundColor);
+        }
+      }
+    </style>
+  </body>
+</html>

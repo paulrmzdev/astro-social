@@ -1,0 +1,15 @@
+---
+const { logo } = Astro.props;
+---
+
+<img src={logo.src} alt="Logo" title="logo" width={100} />
+
+<style>
+  .footer {
+    color: var(--primary-color);
+  }
+  .footer a {
+    text-decoration: none;
+    color: var(--tertiary-color);
+  }
+</style>
